@@ -20,38 +20,52 @@
 #define __KINECT2_DEFINITIONS_H__
 
 #include <kinect2_registration/kinect2_console.h>
+#include <opencv2/opencv.hpp>
 
-#define K2_DEFAULT_NS          "kinect2"
+#if CV_MAJOR_VERSION > 3
 
-#define K2_TF_LINK             "_link"
-#define K2_TF_RGB_OPT_FRAME    "_rgb_optical_frame"
-#define K2_TF_IR_OPT_FRAME     "_ir_optical_frame"
+#define CV_BGR2GRAY cv::COLOR_BGR2GRAY
+#define CV_RGBA2BGR cv::COLOR_RGBA2BGR
+#define CV_BGRA2BGR cv::COLOR_BGRA2BGR
+#define CV_IMWRITE_PNG_STRATEGY_RLE cv::IMWRITE_PNG_STRATEGY_RLE
+#define CV_IMWRITE_PNG_STRATEGY cv::IMWRITE_PNG_STRATEGY
+#define CV_IMWRITE_PNG_COMPRESSION cv::IMWRITE_PNG_COMPRESSION
+#define CV_IMWRITE_JPEG_QUALITY cv::IMWRITE_JPEG_QUALITY
+#define CV_AA cv::LINE_AA
 
-#define K2_TOPIC_HD            "/hd"
-#define K2_TOPIC_QHD           "/qhd"
-#define K2_TOPIC_SD            "/sd"
+#endif
 
-#define K2_TOPIC_IMAGE_RECT    "_rect"
-#define K2_TOPIC_IMAGE_COLOR   "/image_color"
-#define K2_TOPIC_IMAGE_MONO    "/image_mono"
-#define K2_TOPIC_IMAGE_DEPTH   "/image_depth"
-#define K2_TOPIC_IMAGE_IR      "/image_ir"
+#define K2_DEFAULT_NS "kinect2"
 
-#define K2_TOPIC_COMPRESSED    "/compressed"
-#define K2_TOPIC_INFO          "/camera_info"
+#define K2_TF_LINK "_link"
+#define K2_TF_RGB_OPT_FRAME "_rgb_optical_frame"
+#define K2_TF_IR_OPT_FRAME "_ir_optical_frame"
 
-#define K2_CALIB_COLOR         "calib_color.yaml"
-#define K2_CALIB_IR            "calib_ir.yaml"
-#define K2_CALIB_POSE          "calib_pose.yaml"
-#define K2_CALIB_DEPTH         "calib_depth.yaml"
+#define K2_TOPIC_HD "/hd"
+#define K2_TOPIC_QHD "/qhd"
+#define K2_TOPIC_SD "/sd"
+
+#define K2_TOPIC_IMAGE_RECT "_rect"
+#define K2_TOPIC_IMAGE_COLOR "/image_color"
+#define K2_TOPIC_IMAGE_MONO "/image_mono"
+#define K2_TOPIC_IMAGE_DEPTH "/image_depth"
+#define K2_TOPIC_IMAGE_IR "/image_ir"
+
+#define K2_TOPIC_COMPRESSED "/compressed"
+#define K2_TOPIC_INFO "/camera_info"
+
+#define K2_CALIB_COLOR "calib_color.yaml"
+#define K2_CALIB_IR "calib_ir.yaml"
+#define K2_CALIB_POSE "calib_pose.yaml"
+#define K2_CALIB_DEPTH "calib_depth.yaml"
 
 #define K2_CALIB_CAMERA_MATRIX "cameraMatrix"
-#define K2_CALIB_DISTORTION    "distortionCoefficients"
-#define K2_CALIB_ROTATION      "rotation"
-#define K2_CALIB_PROJECTION    "projection"
-#define K2_CALIB_TRANSLATION   "translation"
-#define K2_CALIB_ESSENTIAL     "essential"
-#define K2_CALIB_FUNDAMENTAL   "fundamental"
-#define K2_CALIB_DEPTH_SHIFT   "depthShift"
+#define K2_CALIB_DISTORTION "distortionCoefficients"
+#define K2_CALIB_ROTATION "rotation"
+#define K2_CALIB_PROJECTION "projection"
+#define K2_CALIB_TRANSLATION "translation"
+#define K2_CALIB_ESSENTIAL "essential"
+#define K2_CALIB_FUNDAMENTAL "fundamental"
+#define K2_CALIB_DEPTH_SHIFT "depthShift"
 
 #endif //__KINECT2_DEFINITIONS_H__
